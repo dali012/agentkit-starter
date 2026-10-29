@@ -72,7 +72,7 @@ export function HeroVideoDialog({
 	animationStyle = "from-center",
 	videoSrc,
 	thumbnailSrc,
-	thumbnailAlt = "Video thumbnail",
+	thumbnailAlt = "Anteprima video",
 	className,
 }: HeroVideoProps) {
 	const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -126,6 +126,7 @@ export function HeroVideoDialog({
 							className="relative mx-4 aspect-video w-full max-w-4xl md:mx-0"
 						>
 							<motion.button
+								aria-label="Chiudi video"
 								className="absolute -top-16 right-0 cursor-pointer rounded-full bg-neutral-900/50 p-2 text-white text-xl ring-1 backdrop-blur-md transition-all duration-200 ease-out hover:scale-[98%] dark:bg-neutral-100/50 dark:text-black"
 								onClick={() => setIsVideoOpen(false)}
 							>
@@ -133,6 +134,7 @@ export function HeroVideoDialog({
 							</motion.button>
 							<div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
 								<iframe
+									title="Presentazione del prodotto"
 									src={videoSrc}
 									className="size-full"
 									allowFullScreen

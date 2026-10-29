@@ -8,7 +8,7 @@ export function BentoSection() {
 
 	return (
 		<section
-			id="bento"
+			id="features"
 			className="relative flex w-full flex-col items-center justify-center px-5 md:px-10"
 		>
 			<div className="relative mx-5 border-x md:mx-10">

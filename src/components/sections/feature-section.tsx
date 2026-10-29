@@ -7,7 +7,7 @@ export function FeatureSection() {
 
 	return (
 		<section
-			id="features"
+			id="come-funziona"
 			className="relative flex w-full flex-col items-center justify-center gap-5"
 		>
 			<SectionHeader>

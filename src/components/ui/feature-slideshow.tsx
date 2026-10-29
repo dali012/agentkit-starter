@@ -258,7 +258,20 @@ export const Feature = ({
 		}
 
 		return (
-			<div className="aspect-auto h-full w-full rounded-xl border border-neutral-300/50 bg-gray-200 p-1" />
+			<motion.div
+				key={currentIndex}
+				initial={{ opacity: 0, filter: "blur(5px)" }}
+				animate={{ opacity: 1, filter: "blur(0px)" }}
+				className="flex h-full w-full flex-col items-center justify-center gap-5 rounded-xl border border-border bg-accent p-8 text-center"
+			>
+				<span className="font-semibold text-5xl text-secondary">
+					0{currentIndex + 1}
+				</span>
+				<p className="text-xl">{currentItem.title}</p>
+				<p className="text-muted-foreground text-sm">
+					Il percorso verso il tuo ambiente Vestora Cloud
+				</p>
+			</motion.div>
 		);
 	};
 
@@ -277,7 +290,7 @@ export const Feature = ({
 							defaultValue={`item-${currentIndex}`}
 							value={`item-${currentIndex}`}
 							onValueChange={(value) =>
-								setCurrentIndex(Number(value.split("-")[1]))
+								value && setCurrentIndex(Number(value.split("-")[1]))
 							}
 						>
 							{featureItems.map((item, index) => (
@@ -360,7 +373,8 @@ export const Feature = ({
 						}}
 					>
 						{featureItems.map((item, index) => (
-							<a
+							<button
+								type="button"
 								key={item.id}
 								className="card relative grid h-full max-w-64 shrink-0 items-start justify-center border-t border-b border-l bg-background p-3 first:rounded-tl-xl last:rounded-tr-xl last:border-r"
 								onClick={() => setCurrentIndex(index)}
@@ -418,7 +432,7 @@ export const Feature = ({
 										{item.content}
 									</p>
 								</div>
-							</a>
+							</button>
 						))}
 					</ul>
 				</div>

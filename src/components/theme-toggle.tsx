@@ -25,7 +25,7 @@ export function ThemeToggle() {
 						? "bg-muted text-foreground"
 						: "text-muted-foreground hover:text-foreground"
 				}`}
-				aria-label="System theme"
+				aria-label="Tema di sistema"
 			>
 				<div className="relative flex h-4 w-4 items-center justify-center">
 					<Monitor className="h-4 w-4" />
@@ -38,7 +38,7 @@ export function ThemeToggle() {
 						? "bg-muted text-foreground"
 						: "text-muted-foreground hover:text-foreground"
 				}`}
-				aria-label="Light theme"
+				aria-label="Tema chiaro"
 			>
 				<Sun className="h-4 w-4" />
 			</button>
@@ -49,7 +49,7 @@ export function ThemeToggle() {
 						? "bg-muted text-foreground"
 						: "text-muted-foreground hover:text-foreground"
 				}`}
-				aria-label="Dark theme"
+				aria-label="Tema scuro"
 			>
 				<Moon className="h-4 w-4" />
 			</button>

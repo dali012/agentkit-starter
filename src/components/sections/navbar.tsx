@@ -2,16 +2,17 @@
 
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Icons } from "@/components/icons";
 import { NavMenu } from "@/components/nav-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/lib/config";
+import { demoUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const INITIAL_WIDTH = "70rem";
-const MAX_WIDTH = "800px";
+const MAX_WIDTH = "1100px";
 
 // Animation variants
 const overlayVariants = {
@@ -112,8 +113,14 @@ export function Navbar() {
 				>
 					<div className="flex h-[56px] items-center justify-between p-4">
 						<Link href="/" className="flex items-center gap-3">
-							<Icons.logo className="size-7 md:size-10" />
-							<p className="font-semibold text-lg text-primary">AgentKit</p>
+							<Image
+								src="/branding/vestora-logo.png"
+								alt=""
+								width={40}
+								height={40}
+								className="size-7 object-contain md:size-10"
+							/>
+							<p className="font-semibold text-lg text-primary">Vestora</p>
 						</Link>
 
 						<NavMenu />
@@ -121,15 +128,17 @@ export function Navbar() {
 						<div className="flex shrink-0 flex-row items-center gap-1 md:gap-3">
 							<div className="flex items-center space-x-6">
 								<Link
-									className="hidden h-8 w-fit items-center justify-center rounded-full border border-white/[0.12] bg-secondary px-4 font-normal text-primary-foreground text-sm tracking-wide shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] md:flex dark:text-secondary-foreground"
-									href="/chat"
+									className="hidden h-8 w-fit items-center justify-center rounded-full border border-white/[0.12] bg-secondary px-4 font-normal text-primary-foreground text-sm tracking-wide shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] xl:flex dark:text-secondary-foreground"
+									href={demoUrl}
 								>
-									Try for free
+									Richiedi una demo
 								</Link>
 							</div>
 							<ThemeToggle />
 							<button
-								className="flex size-8 cursor-pointer items-center justify-center rounded-md border border-border md:hidden"
+								className="flex size-8 cursor-pointer items-center justify-center rounded-md border border-border xl:hidden"
+								aria-label="Apri o chiudi il menu"
+								aria-expanded={isDrawerOpen}
 								onClick={toggleDrawer}
 							>
 								{isDrawerOpen ? (
@@ -168,12 +177,20 @@ export function Navbar() {
 							<div className="flex flex-col gap-4">
 								<div className="flex items-center justify-between">
 									<Link href="/" className="flex items-center gap-3">
-										<Icons.logo className="size-7 md:size-10" />
+										<Image
+											src="/branding/vestora-logo.png"
+											alt=""
+											width={40}
+											height={40}
+											className="size-7 object-contain md:size-10"
+										/>
 										<p className="font-semibold text-lg text-primary">
-											AgentKit
+											Vestora
 										</p>
 									</Link>
 									<button
+										aria-label="Apri o chiudi il menu"
+										aria-expanded={isDrawerOpen}
 										onClick={toggleDrawer}
 										className="cursor-pointer rounded-md border border-border p-1"
 									>
@@ -218,10 +235,10 @@ export function Navbar() {
 								{/* Action buttons */}
 								<div className="flex flex-col gap-2">
 									<Link
-										href="/chat"
+										href={demoUrl}
 										className="flex h-8 w-full items-center justify-center rounded-full border border-white/[0.12] bg-secondary px-4 font-normal text-primary-foreground text-sm tracking-wide shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] transition-all ease-out hover:bg-secondary/80 active:scale-95 dark:text-secondary-foreground"
 									>
-										Try for free
+										Richiedi una demo
 									</Link>
 								</div>
 							</div>
