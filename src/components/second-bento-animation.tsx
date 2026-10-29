@@ -1,4 +1,15 @@
-import { Icons } from "@/components/icons";
+import {
+	Barcode,
+	Boxes,
+	Cloud,
+	Package,
+	Shirt,
+	Store,
+	Tags,
+	Truck,
+	Users,
+} from "lucide-react";
+import Image from "next/image";
 import { OrbitingCircles } from "@/components/ui/orbiting-circle";
 
 export function SecondBentoAnimation() {
@@ -8,7 +19,13 @@ export function SecondBentoAnimation() {
 			<div className="pointer-events-none absolute top-0 left-0 z-20 h-20 w-full bg-gradient-to-b from-background to-transparent"></div>
 
 			<div className="absolute top-1/2 left-1/2 z-30 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-2 rounded-full bg-secondary p-2 md:top-auto md:bottom-0">
-				<Icons.logo className="size-10 fill-white" />
+				<Image
+					src="/branding/vestora-logo.png"
+					alt=""
+					width={40}
+					height={40}
+					className="size-10 fill-white object-contain"
+				/>
 			</div>
 			<div className="relative flex h-full w-full items-center justify-center overflow-hidden">
 				<div className="relative flex h-full w-full translate-y-0 items-center justify-center md:translate-y-32">
@@ -19,15 +36,15 @@ export function SecondBentoAnimation() {
 						reverse
 						speed={1}
 					>
-						<Icons.boat />
-						<Icons.supabase />
-						<Icons.figma />
+						<Store />
+						<Shirt />
+						<Barcode />
 					</OrbitingCircles>
 
 					<OrbitingCircles index={1} iconSize={60} speed={0.5}>
-						<Icons.workos />
-						<Icons.runwayml />
-						<Icons.gemini />
+						<Package />
+						<Users />
+						<Cloud />
 					</OrbitingCircles>
 
 					<OrbitingCircles
@@ -37,9 +54,9 @@ export function SecondBentoAnimation() {
 						reverse
 						speed={0.5}
 					>
-						<Icons.vercel />
-						<Icons.replit />
-						<Icons.posthog />
+						<Tags />
+						<Truck />
+						<Boxes />
 					</OrbitingCircles>
 				</div>
 			</div>

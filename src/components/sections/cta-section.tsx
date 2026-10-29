@@ -14,15 +14,16 @@ export function CTASection() {
 				<div className="relative z-20 h-[400px] w-full overflow-hidden rounded-xl border border-border bg-secondary shadow-xl md:h-[400px]">
 					<Image
 						src={ctaSection.backgroundImage}
-						alt="Agent CTA Background"
+						alt=""
 						className="absolute inset-0 h-full w-full object-cover object-right md:object-center"
 						fill
+						sizes="100vw"
 						priority
 					/>
 					<div className="absolute inset-0 -top-32 flex flex-col items-center justify-center md:-top-40">
-						<h1 className="max-w-xs text-center font-medium text-4xl text-white tracking-tighter md:max-w-xl md:text-7xl">
+						<h2 className="max-w-xs text-center font-medium text-4xl text-white tracking-tighter md:max-w-xl md:text-7xl">
 							{ctaSection.title}
-						</h1>
+						</h2>
 						<div className="absolute bottom-10 flex flex-col items-center justify-center gap-2">
 							<Link
 								href={ctaSection.button.href}

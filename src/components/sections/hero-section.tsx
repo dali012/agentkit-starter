@@ -24,7 +24,7 @@ export function HeroSection() {
 							{hero.description}
 						</p>
 					</div>
-					<div className="flex flex-row items-center justify-center gap-2.5">
+					<div className="flex flex-wrap items-center justify-center gap-2.5">
 						<Link
 							href={hero.cta.primary.href}
 							className="flex h-9 items-center justify-center whitespace-nowrap rounded-full border border-white/[0.12] bg-secondary px-6 font-normal text-primary-foreground text-sm tracking-wide shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] transition-all ease-out hover:bg-secondary/80 active:scale-95 dark:text-secondary-foreground"
@@ -33,7 +33,7 @@ export function HeroSection() {
 						</Link>
 						<Link
 							href={hero.cta.secondary.href}
-							className="flex h-10 w-32 items-center justify-center rounded-full border border-[#E5E7EB] bg-white px-5 font-normal text-primary text-sm tracking-wide transition-all ease-out hover:bg-white/80 active:scale-95 dark:border-[#27272A] dark:bg-background dark:hover:bg-background/80"
+							className="flex h-10 w-fit items-center justify-center rounded-full border border-[#E5E7EB] bg-white px-5 font-normal text-primary text-sm tracking-wide transition-all ease-out hover:bg-white/80 active:scale-95 dark:border-[#27272A] dark:bg-background dark:hover:bg-background/80"
 						>
 							{hero.cta.secondary.text}
 						</Link>

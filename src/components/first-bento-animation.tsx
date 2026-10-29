@@ -2,25 +2,8 @@
 "use client";
 
 import { AnimatePresence, motion, useInView } from "motion/react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Icons } from "@/components/icons";
-import {
-	Reasoning,
-	ReasoningContent,
-	ReasoningResponse,
-} from "@/components/ui/reasoning";
-
-export function ReasoningBasic() {
-	const reasoningText = `Based on your calendar patterns and preferences, I recommend scheduling the team meeting for Tuesday at 2pm. This time slot has historically had the highest attendance rate, and it avoids conflicts with other recurring meetings.`;
-
-	return (
-		<Reasoning>
-			<ReasoningContent className="">
-				<ReasoningResponse text={reasoningText} />
-			</ReasoningContent>
-		</Reasoning>
-	);
-}
 
 export function FirstBentoAnimation() {
 	const ref = useRef(null);
@@ -70,21 +53,24 @@ export function FirstBentoAnimation() {
 						}}
 					>
 						<p className="text-sm">
-							Hey, I need help scheduling a team meeting that works well for
-							everyone. Any suggestions for finding an optimal time slot?
+							Vendite, articoli e disponibilità: un unico flusso di lavoro.
 						</p>
 					</motion.div>
 					<div className="flex w-fit flex-shrink-0 items-center rounded-full border border-border bg-background">
-						<img
-							src="https://randomuser.me/api/portraits/women/79.jpg"
-							alt="User Avatar"
-							className="size-8 flex-shrink-0 rounded-full"
-						/>
+						<span className="flex size-8 items-center justify-center text-xs">
+							POS
+						</span>
 					</div>
 				</div>
 				<div className="flex items-start gap-2">
 					<div className="flex size-10 flex-shrink-0 items-center justify-center rounded-full border border-border bg-background shadow-[0_0_10px_rgba(0,0,0,0.05)]">
-						<Icons.logo className="size-4" />
+						<Image
+							src="/branding/vestora-logo.png"
+							alt=""
+							width={40}
+							height={40}
+							className="size-4 object-contain"
+						/>
 					</div>
 
 					<div className="relative">
@@ -133,7 +119,17 @@ export function FirstBentoAnimation() {
 										ease: "easeOut",
 									}}
 								>
-									<ReasoningBasic />
+									<p className="text-sm">
+										Punto vendita
+										<br />
+										Codici a barre
+										<br />
+										Magazzino
+										<br />
+										<span className="text-muted-foreground text-xs">
+											Illustrazione del flusso operativo
+										</span>
+									</p>
 								</motion.div>
 							)}
 						</AnimatePresence>
